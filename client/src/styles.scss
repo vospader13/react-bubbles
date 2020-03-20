@@ -8,15 +8,18 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  background:rgba(55,55,55,.01);
 }
 
 .App {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
+  color:rgb(86, 0, 247);
 
   svg {
     height: 100%;
+    width:300%;
   }
 }
 
@@ -41,10 +44,11 @@ body,
 
     li {
       cursor: pointer;
-      padding: 6px 0;
+      padding: 8px 8px;
       display: flex;
       justify-content: space-between;
       width: 100%;
+      color:rgb(255, 255, 255);
     }
   }
 }
@@ -56,8 +60,9 @@ body,
 .color-box {
   height: 16px;
   width: 16px;
-  border: 1px lightgray solid;
+  border: 1px rgb(235, 235, 235) solid;
   margin-right: 36px;
+  // width:50vw;
 }
 
 form {
@@ -92,8 +97,47 @@ form {
   button {
     border: none;
     background-color: black;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 3px 8px;
     margin-top: 16px;
   }
+}
+
+.login-div {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+
+  form {
+    margin: auto;
+
+    input {
+      width: 20rem;
+      text-align: center;
+      margin-top: 10px;
+      height: 2rem;
+      border-radius: .2rem;
+      box-shadow:inset 2px 1px 3px 1px black, inset -2px -1px 3px -1px black;
+    }
+
+    button {
+      margin-top: 10px;
+      height: 2rem;
+      border-radius: .2rem;
+    }
+  }
+}
+
+.app-cont {
+  display: flex;
+}
+
+#canvas{
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  background:rgba(55,55,55,1);
+  z-index: -1;
 }

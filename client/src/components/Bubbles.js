@@ -4,32 +4,42 @@ import { Svg, Circle } from "@potion/element";
 
 const Bubbles = ({ colors }) => {
   const [bubbleData, setBubbleData] = useState([]);
+    const [bub, Ata] = useState(100);
   useEffect(() => {
+    const changeVal =  bub.state +100;
+
+
     const generateBubbleData = colors.map((_, i) => ({
-      value: Math.floor(Math.random() * (colors.length * 2)) + 1,
-      key: `${i + 1}`
+      value: Math.floor(Math.random() * (colors.length * 2)),
+      key: `${i }`
     }));
+
     setBubbleData(generateBubbleData);
   }, [colors]);
 
+console.log(bub)
   return (
-    <div className="bubble-wrap">
+    <div className="bubble-wrap round">
       <p>bubbles</p>
-      <Svg width={400} height={400}>
+      <Svg width={1700} height={500}>
+
         <Pack
           data={{
             children: bubbleData
           }}
           sum={datum => datum.value}
-          size={[400, 400]}
-          includeRoot={false}
-          nodeEnter={d => ({ ...d, r: 0 })}
+          size={[1000, 500]}
+          includeRoot={true}
+          nodeEnter={d => ({ ...d, r: 15 })}
           animate
         >
           {nodes =>
+
             nodes
               .map(({ x, y, r, key }, i) => {
+
                 if (i < colors.length) {
+
                   return (
                     <Circle
                       key={key}
@@ -38,13 +48,16 @@ const Bubbles = ({ colors }) => {
                       r={r}
                       fill={colors[i].code.hex}
                     />
+
                   );
                 }
-                return null;
               })
-              .filter(v => v)
+              .filter(v => colors)
           }
+
         </Pack>
+
+
       </Svg>
     </div>
   );
