@@ -17,7 +17,7 @@ setInterval(function(){
     })
     .catch(err => console.log(err))
 
-  },1000)
+  },1200)
 
   }, [])
 
