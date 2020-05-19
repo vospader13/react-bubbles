@@ -21,7 +21,7 @@ const AddColor = ({ settingColor, colors, updateColors }) => {
 
         updateColors(res.data)
         settingColor(false)
-      },1)
+      },)
       })
       .catch(err => console.log(err))
   }
@@ -54,7 +54,7 @@ const AddColor = ({ settingColor, colors, updateColors }) => {
         </label>
         <div className="button-row">
           <button type="submit">add</button>
-          <button onClick={() => setNewColor(false)}>cancel</button>
+          <button onClick={() => setNewColor(true)}>cancel</button>
         </div>
       </form>
     </div>
